@@ -1,4 +1,5 @@
 ---
+import Header from "../components/Header.astro";
 import TarjetaTalleres from "../components/TarjetaTaller.astro";
 
 interface Taller {
@@ -7,7 +8,6 @@ interface Taller {
     imagen: string;
 }
 
-// Lista con los 4 talleres requeridos
 const todosLosTalleres: Taller[] = [
     {
         nombre: "Fotografía",
@@ -40,42 +40,10 @@ const todosLosTalleres: Taller[] = [
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Espacio Cultural | Todos los Talleres</title>
-        <style>
-            body {
-                font-family:
-                    system-ui,
-                    -apple-system,
-                    sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f8fafc;
-                color: #0f172a;
-            }
-
-            .encabezado-pagina {
-                background-color: #2563eb;
-                color: #ffffff;
-                text-align: center;
-                padding: 3rem 1rem;
-            }
-
-            .contenedor {
-                max-width: 900px;
-                margin: 3rem auto;
-                padding: 0 1.5rem;
-            }
-
-            .lista-talleres {
-                display: grid !important;
-                /* Fuerza exactamente 2 columnas iguales */
-                grid-template-columns: 1fr 1fr !important;
-                gap: 2rem !important;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
-        </style>
     </head>
     <body>
+        <Header />
+
         <header class="encabezado-pagina">
             <h1>Nuestros Talleres</h1>
             <p>
@@ -92,7 +60,6 @@ const todosLosTalleres: Taller[] = [
                             nombre={taller.nombre}
                             descripcion={taller.descripcion}
                             imagen={taller.imagen}
-                            mostrarBoton={false}
                         />
                     ))
                 }
@@ -114,7 +81,7 @@ const todosLosTalleres: Taller[] = [
     }
 
     .encabezado-pagina {
-        background-color: #2563eb;
+        background-color: #1e293b;
         color: #ffffff;
         text-align: center;
         padding: 3rem 1rem;
@@ -122,20 +89,26 @@ const todosLosTalleres: Taller[] = [
 
     .encabezado-pagina h1 {
         margin: 0 0 0.5rem 0;
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
 
     .contenedor {
-        max-width: 1100px;
+        max-width: 900px;
         margin: 3rem auto;
         padding: 0 1.5rem;
     }
 
     .lista-talleres {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        padding: 0;
-        margin: 0;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2rem !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    @media (max-width: 640px) {
+        .lista-talleres {
+            grid-template-columns: 1fr !important;
+        }
     }
 </style>

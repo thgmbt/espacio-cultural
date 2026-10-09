@@ -1,0 +1,140 @@
+---
+import Header from "../components/Header.astro";
+---
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Espacio Cultural | Sobre Nosotros</title>
+    </head>
+    <body>
+        <Header />
+
+        <header class="encabezado-pagina">
+            <h1>Sobre Nuestro Espacio Cultural</h1>
+            <p>
+                Conoce la historia, visión y propósito que impulsan nuestra
+                comunidad.
+            </p>
+        </header>
+
+        <main class="contenedor">
+            <section class="seccion-nosotros">
+                <h2>¿Quiénes somos?</h2>
+                <p>
+                    Somos un espacio de recreación y gestión cultural
+                    independiente dedicado a la promoción de las artes, los
+                    oficios y el desarrollo comunitario. Nacimos con la
+                    convicción de que el arte y la cultura son herramientas
+                    fundamentales para la transformación social, la libre
+                    expresión y el bienestar personal.
+                </p>
+
+                <h2>Nuestro Propósito</h2>
+                <p>
+                    Nuestro objetivo principal es ofrecer un punto de encuentro
+                    accesible e inclusivo donde personas de todas las edades
+                    puedan descubrir, explorar y potenciar sus habilidades
+                    creativas a través de talleres, actividades comunitarias y
+                    muestras artísticas.
+                </p>
+
+                <div class="valores-grid">
+                    <div class="tarjeta-valor">
+                        <h3>🎨 Comunidad</h3>
+                        <p>
+                            Fomentamos un ambiente colaborativo y respetuoso
+                            donde compartir saberes e ideas.
+                        </p>
+                    </div>
+                    <div class="tarjeta-valor">
+                        <h3>🌱 Creatividad</h3>
+                        <p>
+                            Brindamos las herramientas para la experimentación
+                            artística libre y guiada.
+                        </p>
+                    </div>
+                    <div class="tarjeta-valor">
+                        <h3>🤝 Inclusión</h3>
+                        <p>
+                            Espacios accesibles e interactivos pensados para
+                            toda la comunidad.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
+
+<style>
+    body {
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8fafc;
+        color: #0f172a;
+    }
+
+    .encabezado-pagina {
+        background-color: #1e293b;
+        color: #ffffff;
+        text-align: center;
+        padding: 3.5rem 1rem;
+    }
+
+    .encabezado-pagina h1 {
+        margin: 0 0 0.5rem 0;
+        font-size: 2.25rem;
+    }
+
+    .contenedor {
+        max-width: 800px;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+    }
+
+    .seccion-nosotros h2 {
+        color: #1e293b;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .seccion-nosotros p {
+        line-height: 1.7;
+        color: #334155;
+        font-size: 1.05rem;
+    }
+
+    .valores-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .tarjeta-valor {
+        background-color: #ffffff;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .tarjeta-valor h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        color: #2563eb;
+    }
+
+    .tarjeta-valor p {
+        font-size: 0.95rem;
+        margin: 0;
+    }
+</style>

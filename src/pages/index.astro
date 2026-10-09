@@ -1,29 +1,23 @@
 ---
+import Header from "../components/Header.astro";
 import TarjetaTalleres from "../components/TarjetaTaller.astro";
 
 interface Taller {
 	nombre: string;
-	descripcion: string;
 	imagen: string;
 }
 
-// 3 talleres seleccionados para destacar en el Inicio
 const talleresDestacados: Taller[] = [
 	{
 		nombre: "Fotografía",
-		descripcion:
-			"Introducción a la composición y técnicas de fotografía digital.",
 		imagen: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?q=80&w=600&auto=format&fit=crop",
 	},
 	{
 		nombre: "Cerámica",
-		descripcion:
-			"Creación de objetos utilizando técnicas básicas de modelado.",
 		imagen: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=600&auto=format&fit=crop",
 	},
 	{
 		nombre: "Escritura creativa",
-		descripcion: "Exploración de relatos breves y ejercicios de escritura.",
 		imagen: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600&auto=format&fit=crop",
 	},
 ];
@@ -36,9 +30,11 @@ const talleresDestacados: Taller[] = [
 		<title>Espacio Cultural | Inicio</title>
 	</head>
 	<body>
+		<Header />
+
 		<header class="hero">
 			<h1>Bienvenidos a nuestro Espacio Cultural</h1>
-			<p>Un espacio para aprender, crear y compartir.</p>
+			<p>Un espacio para aprender, crear y compartir en comunidad.</p>
 		</header>
 
 		<main class="contenedor">
@@ -50,18 +46,14 @@ const talleresDestacados: Taller[] = [
 						talleresDestacados.map((taller) => (
 							<TarjetaTalleres
 								nombre={taller.nombre}
-								descripcion={taller.descripcion}
 								imagen={taller.imagen}
-								enlace="/talleres"
-								mostrarBoton={true}
 							/>
 						))
 					}
 				</ul>
-				<div class="ver-mas-container">
-					<a href="/talleres" class="btn-secundario"
-						>Ver todos los talleres</a
-					>
+
+				<div class="mensaje-pie">
+					<p>Visita la página de talleres para más detalle.</p>
 				</div>
 			</section>
 		</main>
@@ -84,51 +76,39 @@ const talleresDestacados: Taller[] = [
 		background-color: #1e293b;
 		color: #ffffff;
 		text-align: center;
-		padding: 4rem 1rem;
+		padding: 3.5rem 1rem;
 	}
 
 	.hero h1 {
-		margin: 0 0 1rem 0;
-		font-size: 2.5rem;
+		margin: 0 0 0.5rem 0;
+		font-size: 2.25rem;
 	}
 
 	.contenedor {
-		max-width: 1100px;
+		max-width: 1000px;
 		margin: 3rem auto;
 		padding: 0 1.5rem;
 	}
 
 	h2 {
-		font-size: 2rem;
+		font-size: 1.8rem;
 		text-align: center;
 		margin-bottom: 2rem;
 	}
 
 	.lista-talleres {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		gap: 2rem;
 		padding: 0;
 		margin: 0;
 	}
 
-	.ver-mas-container {
+	.mensaje-pie {
 		text-align: center;
-		margin-top: 3rem;
-	}
-
-	.btn-secundario {
-		display: inline-block;
-		padding: 0.85rem 1.75rem;
-		background-color: #e2e8f0;
-		color: #0f172a;
-		text-decoration: none;
-		border-radius: 10px;
-		font-weight: 600;
-		transition: background-color 0.2s ease;
-	}
-
-	.btn-secundario:hover {
-		background-color: #cbd5e1;
+		margin-top: 2.5rem;
+		font-size: 1.1rem;
+		font-weight: 500;
+		color: #ccd2db;
 	}
 </style>
