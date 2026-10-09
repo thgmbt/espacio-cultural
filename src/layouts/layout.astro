@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import FooterAstroComponent, { Footer } from "../components/Footer.astro";
 
 interface Props {
     titulo: string;
@@ -23,7 +24,7 @@ const { titulo } = Astro.props;
         </main>
 
         <footer class="footer-sitio">
-            <p>&copy; 2026 Espacio Cultural. Todos los derechos reservados.</p>
+            {{ Footer }}
         </footer>
     </body>
 </html>
