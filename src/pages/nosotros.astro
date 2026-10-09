@@ -2,7 +2,6 @@
 import Layout from "../layouts/layout.astro";
 ---
 
-
 <Layout titulo="Sobre Nosotros">
     <header class="encabezado-pagina">
         <h1>Sobre Nuestro Espacio Cultural</h1>
@@ -11,16 +10,6 @@ import Layout from "../layouts/layout.astro";
             comunidad.
         </p>
     </header>
-=======
-<html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Espacio Cultural | Sobre Nosotros</title>
-    </head>
-    <body class="body-nosotros">
-        <Headers />
-
 
     <div class="contenedor">
         <section class="seccion-nosotros">
@@ -33,6 +22,7 @@ import Layout from "../layouts/layout.astro";
                 transformación social, la libre expresión y el bienestar
                 personal.
             </p>
+
             <h2>Nuestro Propósito</h2>
             <p>
                 Nuestro objetivo principal es ofrecer un punto de encuentro
@@ -45,53 +35,30 @@ import Layout from "../layouts/layout.astro";
     </div>
 </Layout>
 
-        <main class="contenedor">
-            <section class="seccion-nosotros">
-                <h2>¿Quiénes somos?</h2>
-                <p>
-                    Somos un espacio de recreación y gestión cultural
-                    independiente dedicado a la promoción de las artes, los
-                    oficios y el desarrollo comunitario. Nacimos con la
-                    convicción de que el arte y la cultura son herramientas
-                    fundamentales para la transformación social, la libre
-                    expresión y el bienestar personal.
-                </p>
+<style>
+    .encabezado-pagina {
+        background-color: #2563eb;
+        color: #ffffff;
+        text-align: center;
+        padding: 3.5rem 1rem;
+    }
 
-                <h2>Nuestro Propósito</h2>
-                <p>
-                    Nuestro objetivo principal es ofrecer un punto de encuentro
-                    accesible e inclusivo donde personas de todas las edades
-                    puedan descubrir, explorar y potenciar sus habilidades
-                    creativas a través de talleres, actividades comunitarias y
-                    muestras artísticas.
-                </p>
+    .contenedor {
+        max-width: 800px;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+    }
 
-                <div class="valores-grid">
-                    <div class="tarjeta-valor">
-                        <h3>🎨 Comunidad</h3>
-                        <p>
-                            Fomentamos un ambiente colaborativo y respetuoso
-                            donde compartir saberes e ideas.
-                        </p>
-                    </div>
-                    <div class="tarjeta-valor">
-                        <h3>🌱 Creatividad</h3>
-                        <p>
-                            Brindamos las herramientas para la experimentación
-                            artística libre y guiada.
-                        </p>
-                    </div>
-                    <div class="tarjeta-valor">
-                        <h3>🤝 Inclusión</h3>
-                        <p>
-                            Espacios accesibles e interactivos pensados para
-                            toda la comunidad.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </body>
-</html>
+    .seccion-nosotros h2 {
+        color: #1e293b;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
 
-
+    .seccion-nosotros p {
+        line-height: 1.7;
+        color: #334155;
+        font-size: 1.05rem;
+    }
+</style>
