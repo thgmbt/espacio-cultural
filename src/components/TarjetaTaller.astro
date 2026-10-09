@@ -1,5 +1,4 @@
 ---
-// Definición de las Props que recibe el componente
 interface Props {
     nombre: string;
     descripcion: string;
@@ -7,16 +6,20 @@ interface Props {
     enlace?: string;
 }
 
-const { nombre, descripcion, imagen, enlace = "#" } = Astro.props;
+const { nombre, descripcion, imagen, enlace = "/talleres" } = Astro.props;
 ---
 
 <li class="tarjeta-taller">
     <article>
-        <img src={imagen} alt={`Imagen del taller ${nombre}`} loading="lazy" />
+        <div class="imagen-contenedor">
+            <img src={imagen} alt={nombre} loading="lazy" />
+        </div>
         <div class="contenido">
             <h3>{nombre}</h3>
             <p>{descripcion}</p>
-            <a href={enlace} class="btn-enlace">Ver más información</a>
+            <a href={enlace} class="btn-enlace">Ver taller en detalle</a>
         </div>
     </article>
 </li>
+=======
+
