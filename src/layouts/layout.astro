@@ -16,15 +16,12 @@ const { titulo } = Astro.props;
         <title>{titulo} | Espacio Cultural</title>
     </head>
     <body>
-        <!-- Encabezado común -->
         <Header />
 
-        <!-- Hueco dinámico donde se inyecta el contenido de cada página -->
         <main>
             <slot />
         </main>
 
-        <!-- Pie de página común -->
         <footer class="footer-sitio">
             <p>&copy; 2026 Espacio Cultural. Todos los derechos reservados.</p>
         </footer>
