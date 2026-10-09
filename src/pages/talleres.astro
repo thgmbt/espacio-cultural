@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import Layout from "../layouts/layout.astro";
 import TarjetaTalleres from "../components/TarjetaTaller.astro";
 
 interface Taller {
@@ -35,80 +35,27 @@ const todosLosTalleres: Taller[] = [
 ];
 ---
 
-<html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Espacio Cultural | Todos los Talleres</title>
-    </head>
-    <body>
-        <Header />
+<Layout titulo="Nuestros Talleres">
+    <header class="encabezado-pagina">
+        <h1>Nuestros Talleres</h1>
+        <p>
+            Conoce la oferta completa de talleres disponibles en nuestro espacio
+            cultural.
+        </p>
+    </header>
 
-        <header class="encabezado-pagina">
-            <h1>Nuestros Talleres</h1>
-            <p>
-                Conoce la oferta completa de talleres disponibles en nuestro
-                espacio cultural.
-            </p>
-        </header>
+    <div class="contenedor">
+        <ul class="lista-talleres">
+            {
+                todosLosTalleres.map((taller) => (
+                    <TarjetaTalleres
+                        nombre={taller.nombre}
+                        descripcion={taller.descripcion}
+                        imagen={taller.imagen}
+                    />
+                ))
+            }
+        </ul>
+    </div>
+</Layout>
 
-        <main class="contenedor">
-            <ul class="lista-talleres">
-                {
-                    todosLosTalleres.map((taller) => (
-                        <TarjetaTalleres
-                            nombre={taller.nombre}
-                            descripcion={taller.descripcion}
-                            imagen={taller.imagen}
-                        />
-                    ))
-                }
-            </ul>
-        </main>
-    </body>
-</html>
-
-<style>
-    body {
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f8fafc;
-        color: #0f172a;
-    }
-
-    .encabezado-pagina {
-        background-color: #1e293b;
-        color: #ffffff;
-        text-align: center;
-        padding: 3rem 1rem;
-    }
-
-    .encabezado-pagina h1 {
-        margin: 0 0 0.5rem 0;
-        font-size: 2.25rem;
-    }
-
-    .contenedor {
-        max-width: 900px;
-        margin: 3rem auto;
-        padding: 0 1.5rem;
-    }
-
-    .lista-talleres {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 2rem !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    @media (max-width: 640px) {
-        .lista-talleres {
-            grid-template-columns: 1fr !important;
-        }
-    }
-</style>

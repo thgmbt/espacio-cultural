@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import Layout from "../layouts/layout.astro";
 import TarjetaTalleres from "../components/TarjetaTaller.astro";
 
 interface Taller {
@@ -23,92 +23,31 @@ const talleresDestacados: Taller[] = [
 ];
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Espacio Cultural | Inicio</title>
-	</head>
-	<body>
-		<Header />
+<Layout titulo="Inicio">
+	<header class="hero">
+		<h1>Bienvenidos a nuestro Espacio Cultural</h1>
+		<p>Un espacio para aprender, crear y compartir en comunidad.</p>
+	</header>
 
-		<header class="hero">
-			<h1>Bienvenidos a nuestro Espacio Cultural</h1>
-			<p>Un espacio para aprender, crear y compartir en comunidad.</p>
-		</header>
+	<div class="contenedor">
+		<section>
+			<h2>Talleres Destacados</h2>
 
-		<main class="contenedor">
-			<section>
-				<h2>Talleres Destacados</h2>
+			<ul class="lista-talleres">
+				{
+					talleresDestacados.map((taller) => (
+						<TarjetaTalleres
+							nombre={taller.nombre}
+							imagen={taller.imagen}
+						/>
+					))
+				}
+			</ul>
 
-				<ul class="lista-talleres">
-					{
-						talleresDestacados.map((taller) => (
-							<TarjetaTalleres
-								nombre={taller.nombre}
-								imagen={taller.imagen}
-							/>
-						))
-					}
-				</ul>
+			<div class="mensaje-pie">
+				<p>Visita la página de talleres para más detalle.</p>
+			</div>
+		</section>
+	</div>
+</Layout>
 
-				<div class="mensaje-pie">
-					<p>Visita la página de talleres para más detalle.</p>
-				</div>
-			</section>
-		</main>
-	</body>
-</html>
-
-<style>
-	body {
-		font-family:
-			system-ui,
-			-apple-system,
-			sans-serif;
-		margin: 0;
-		padding: 0;
-		background-color: #f8fafc;
-		color: #0f172a;
-	}
-
-	.hero {
-		background-color: #1e293b;
-		color: #ffffff;
-		text-align: center;
-		padding: 3.5rem 1rem;
-	}
-
-	.hero h1 {
-		margin: 0 0 0.5rem 0;
-		font-size: 2.25rem;
-	}
-
-	.contenedor {
-		max-width: 1000px;
-		margin: 3rem auto;
-		padding: 0 1.5rem;
-	}
-
-	h2 {
-		font-size: 1.8rem;
-		text-align: center;
-		margin-bottom: 2rem;
-	}
-
-	.lista-talleres {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
-		padding: 0;
-		margin: 0;
-	}
-
-	.mensaje-pie {
-		text-align: center;
-		margin-top: 2.5rem;
-		font-size: 1.1rem;
-		font-weight: 500;
-		color: #ccd2db;
-	}
-</style>

@@ -1,0 +1,64 @@
+---
+import Header from "../components/Header.astro";
+
+interface Props {
+    titulo: string;
+}
+
+const { titulo } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{titulo} | Espacio Cultural</title>
+    </head>
+    <body>
+        <!-- Encabezado común -->
+        <Header />
+
+        <!-- Hueco dinámico donde se inyecta el contenido de cada página -->
+        <main>
+            <slot />
+        </main>
+
+        <!-- Pie de página común -->
+        <footer class="footer-sitio">
+            <p>&copy; 2026 Espacio Cultural. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>
+
+<style is:global>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8fafc;
+        color: #0f172a;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    main {
+        flex: 1;
+    }
+
+    .footer-sitio {
+        background-color: #0f172a;
+        color: #94a3b8;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        margin-top: auto;
+    }
+</style>
