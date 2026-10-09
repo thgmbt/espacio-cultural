@@ -206,9 +206,244 @@ p {
     margin-bottom: 0.75rem;
   }
 
+
   .seccion-nosotros p {
     line-height: 1.7;
     color: #334155;
     font-size: 1.05rem;
   }
 </style> */
+
+    .imagen-contenedor img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tarjeta-taller:hover .imagen-contenedor img {
+        transform: scale(1.05);
+    }
+
+    .contenido {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.3;
+    }
+
+    p {
+        margin: 0 0 1.5rem 0;
+        color: #475569;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+
+    .btn-enlace {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        background-color: #2563eb;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition:
+            background-color 0.2s ease,
+            transform 0.1s ease;
+        text-align: center;
+    }
+
+    .btn-enlace:hover {
+        background-color: #1d4ed8;
+    }   
+
+    .btn-enlace:active {
+        transform: scale(0.98);
+    }
+
+    .btn-enlace::after {
+        content: "→";
+        font-size: 1.1rem;
+        transition: transform 0.2s ease;
+    }
+
+    .btn-enlace:hover::after {
+        transform: translateX(4px);
+    }
+
+	.body-index {
+		font-family:
+			system-ui,
+			-apple-system,
+			sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #f8fafc;
+		color: #0f172a;
+	}
+
+	.hero {
+		background-color: #1e293b;
+		color: #ffffff;
+		text-align: center;
+		padding: 3.5rem 1rem;
+	}
+
+	.hero h1 {
+		margin: 0 0 0.5rem 0;
+		font-size: 2.25rem;
+	}
+
+	.contenedor {
+		max-width: 1000px;
+		margin: 3rem auto;
+		padding: 0 1.5rem;
+	}
+
+    .subtitulo-index {
+		font-size: 1.8rem;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.lista-talleres {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		padding: 0;
+		margin: 0;
+	}
+
+	.mensaje-pie {
+		text-align: center;
+		margin-top: 2.5rem;
+		font-size: 1.1rem;
+		font-weight: 500;
+		color: #ccd2db;
+	}
+
+    .body-nosotros {
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8fafc;
+        color: #0f172a;
+    }
+
+    .encabezado-pagina {
+        background-color: #1e293b;
+        color: #ffffff;
+        text-align: center;
+        padding: 3.5rem 1rem;
+    }
+
+    .encabezado-pagina h1 {
+        margin: 0 0 0.5rem 0;
+        font-size: 2.25rem;
+    }
+
+    .contenedor {
+        max-width: 800px;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+    }
+
+    .seccion-nosotros h2 {
+        color: #1e293b;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .seccion-nosotros p {
+        line-height: 1.7;
+        color: #334155;
+        font-size: 1.05rem;
+    }
+
+    .valores-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .tarjeta-valor {
+        background-color: #ffffff;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .tarjeta-valor h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        color: #2563eb;
+    }
+
+    .tarjeta-valor p {
+        font-size: 0.95rem;
+        margin: 0;
+    }
+    
+    .body-talleres {
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8fafc;
+        color: #0f172a;
+    }
+
+    .encabezado-pagina {
+        background-color: #1e293b;
+        color: #ffffff;
+        text-align: center;
+        padding: 3rem 1rem;
+    }
+
+    .encabezado-pagina h1 {
+        margin: 0 0 0.5rem 0;
+        font-size: 2.25rem;
+    }
+
+    .contenedor {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+    }
+
+    .lista-talleres {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2rem !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    @media (max-width: 640px) {
+        .lista-talleres {
+            grid-template-columns: 1fr !important;
+        }
+    }
+>>>>>>> d20cfe129ca0c05fc8886cb954f6c242b9583987

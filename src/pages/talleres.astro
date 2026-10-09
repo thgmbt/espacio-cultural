@@ -35,6 +35,7 @@ const todosLosTalleres: Taller[] = [
 ];
 ---
 
+<<<<<<< HEAD
 <Layout titulo="Nuestros Talleres">
     <header class="encabezado-pagina">
         <h1>Nuestros Talleres</h1>
@@ -43,6 +44,16 @@ const todosLosTalleres: Taller[] = [
             cultural.
         </p>
     </header>
+=======
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Espacio Cultural | Todos los Talleres</title>
+    </head>
+    <body class="body-talleres">
+        <Header />
+>>>>>>> d20cfe129ca0c05fc8886cb954f6c242b9583987
 
     <div class="contenedor">
         <ul class="lista-talleres">
@@ -59,3 +70,23 @@ const todosLosTalleres: Taller[] = [
     </div>
 </Layout>
 
+<<<<<<< HEAD
+=======
+        <main class="contenedor">
+            <ul class="lista-talleres">
+                {
+                    todosLosTalleres.map((taller) => (
+                        <TarjetaTalleres
+                            nombre={taller.nombre}
+                            descripcion={taller.descripcion}
+                            imagen={taller.imagen}
+                        />
+                    ))
+                }
+            </ul>
+        </main>
+    </body>
+</html>
+
+
+>>>>>>> d20cfe129ca0c05fc8886cb954f6c242b9583987
