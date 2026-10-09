@@ -1,16 +1,110 @@
 ---
+import TarjetaTaller from "../components/TarjetaTaller.astro";
+
+import TarjetaTalleres from "../components/TarjetaTaller.astro";
+
+// Datos de ejemplo para los talleres
+const talleres = [
+	{
+		nombre: "Pintura y Expresión Artística",
+		descripcion:
+			"Explora distintas técnicas pictóricas y desarrolla tu creatividad en un entorno colaborativo.",
+		imagen: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=500&auto=format&fit=crop",
+		enlace: "/talleres/pintura",
+	},
+	{
+		nombre: "Cerámica Modelada a Mano",
+		descripcion:
+			"Aprende el oficio del modelado en arcilla y técnicas de esmaltado para crear tus propias piezas.",
+		imagen: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=500&auto=format&fit=crop",
+		enlace: "/talleres/ceramica",
+	},
+	{
+		nombre: "Teatro y Corporalidad",
+		descripcion:
+			"Un espacio de juego, expresión corporal e improvisación enfocado en el desarrollo personal.",
+		imagen: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?q=80&w=500&auto=format&fit=crop",
+		enlace: "/talleres/teatro",
+	},
+];
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Espacio Cultural | Inicio</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<header class="hero">
+			<h1>Bienvenidos a nuestro Espacio Cultural</h1>
+			<p>Un lugar de encuentro, creación y aprendizaje comunitario.</p>
+		</header>
+
+		<main class="contenedor">
+			<section>
+				<h2>Nuestros Talleres Destacados</h2>
+
+				<!-- Lista desordenada con los componentes reutilizables -->
+				<ul class="lista-talleres">
+					{
+						talleres.map((taller) => (
+							<TarjetaTaller
+								nombre={taller.nombre}
+								descripcion={taller.descripcion}
+								imagen={taller.imagen}
+								enlace={taller.enlace}
+							/>
+						))
+					}
+				</ul>
+			</section>
+		</main>
 	</body>
 </html>
+
+<style>
+	body {
+		font-family:
+			system-ui,
+			-apple-system,
+			sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #f7fafc;
+		color: #2d3748;
+	}
+
+	.hero {
+		background-color: #2b6cb0;
+		color: white;
+		text-align: center;
+		padding: 3rem 1rem;
+	}
+
+	.hero h1 {
+		margin: 0 0 0.5rem 0;
+		font-size: 2.5rem;
+	}
+
+	.contenedor {
+		max-width: 1100px;
+		margin: 2rem auto;
+		padding: 0 1rem;
+	}
+
+	h2 {
+		font-size: 1.8rem;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.lista-talleres {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+		padding: 0;
+		margin: 0;
+	}
+</style>
