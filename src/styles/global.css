@@ -168,3 +168,166 @@
     .btn-enlace:hover::after {
         transform: translateX(4px);
     }
+
+	.body-index {
+		font-family:
+			system-ui,
+			-apple-system,
+			sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #f8fafc;
+		color: #0f172a;
+	}
+
+	.hero {
+		background-color: #1e293b;
+		color: #ffffff;
+		text-align: center;
+		padding: 3.5rem 1rem;
+	}
+
+	.hero h1 {
+		margin: 0 0 0.5rem 0;
+		font-size: 2.25rem;
+	}
+
+	.contenedor {
+		max-width: 1000px;
+		margin: 3rem auto;
+		padding: 0 1.5rem;
+	}
+
+    .subtitulo-index {
+		font-size: 1.8rem;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.lista-talleres {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		padding: 0;
+		margin: 0;
+	}
+
+	.mensaje-pie {
+		text-align: center;
+		margin-top: 2.5rem;
+		font-size: 1.1rem;
+		font-weight: 500;
+		color: #ccd2db;
+	}
+
+    .body-nosotros {
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8fafc;
+        color: #0f172a;
+    }
+
+    .encabezado-pagina {
+        background-color: #1e293b;
+        color: #ffffff;
+        text-align: center;
+        padding: 3.5rem 1rem;
+    }
+
+    .encabezado-pagina h1 {
+        margin: 0 0 0.5rem 0;
+        font-size: 2.25rem;
+    }
+
+    .contenedor {
+        max-width: 800px;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+    }
+
+    .seccion-nosotros h2 {
+        color: #1e293b;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .seccion-nosotros p {
+        line-height: 1.7;
+        color: #334155;
+        font-size: 1.05rem;
+    }
+
+    .valores-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .tarjeta-valor {
+        background-color: #ffffff;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .tarjeta-valor h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        color: #2563eb;
+    }
+
+    .tarjeta-valor p {
+        font-size: 0.95rem;
+        margin: 0;
+    }
+    
+    .body-talleres {
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8fafc;
+        color: #0f172a;
+    }
+
+    .encabezado-pagina {
+        background-color: #1e293b;
+        color: #ffffff;
+        text-align: center;
+        padding: 3rem 1rem;
+    }
+
+    .encabezado-pagina h1 {
+        margin: 0 0 0.5rem 0;
+        font-size: 2.25rem;
+    }
+
+    .contenedor {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+    }
+
+    .lista-talleres {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2rem !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    @media (max-width: 640px) {
+        .lista-talleres {
+            grid-template-columns: 1fr !important;
+        }
+    }

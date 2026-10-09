@@ -41,7 +41,7 @@ const todosLosTalleres: Taller[] = [
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Espacio Cultural | Todos los Talleres</title>
     </head>
-    <body>
+    <body class="body-talleres">
         <Header />
 
         <header class="encabezado-pagina">
@@ -68,47 +68,4 @@ const todosLosTalleres: Taller[] = [
     </body>
 </html>
 
-<style>
-    body {
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f8fafc;
-        color: #0f172a;
-    }
 
-    .encabezado-pagina {
-        background-color: #1e293b;
-        color: #ffffff;
-        text-align: center;
-        padding: 3rem 1rem;
-    }
-
-    .encabezado-pagina h1 {
-        margin: 0 0 0.5rem 0;
-        font-size: 2.25rem;
-    }
-
-    .contenedor {
-        max-width: 900px;
-        margin: 3rem auto;
-        padding: 0 1.5rem;
-    }
-
-    .lista-talleres {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 2rem !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    @media (max-width: 640px) {
-        .lista-talleres {
-            grid-template-columns: 1fr !important;
-        }
-    }
-</style>
