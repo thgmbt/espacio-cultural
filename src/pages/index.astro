@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/layout.astro";
 import TarjetaTalleres from "../components/TarjetaTaller.astro";
-import FooterAstroComponent, { Footer } from "../components/Footer.astro";
+import Footer from "../components/Footer.astro";
 
 interface Taller {
 	nombre: string;
@@ -50,6 +50,6 @@ const talleresDestacados: Taller[] = [
 			</div>
 		</section>
 	</div>
+	<div>{{Footer}}</div>
 </Layout>
 
-{{Footer}}
