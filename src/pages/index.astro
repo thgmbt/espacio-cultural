@@ -47,17 +47,17 @@ const talleresDestacados: Taller[] = [
 
 				<ul class="lista-talleres">
 					{
-						talleresDestacados.map((taller: Taller) => (
+						talleresDestacados.map((taller) => (
 							<TarjetaTalleres
 								nombre={taller.nombre}
 								descripcion={taller.descripcion}
 								imagen={taller.imagen}
 								enlace="/talleres"
+								mostrarBoton={true}
 							/>
 						))
 					}
 				</ul>
-
 				<div class="ver-mas-container">
 					<a href="/talleres" class="btn-secundario"
 						>Ver todos los talleres</a

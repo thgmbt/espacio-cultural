@@ -40,6 +40,40 @@ const todosLosTalleres: Taller[] = [
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Espacio Cultural | Todos los Talleres</title>
+        <style>
+            body {
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f8fafc;
+                color: #0f172a;
+            }
+
+            .encabezado-pagina {
+                background-color: #2563eb;
+                color: #ffffff;
+                text-align: center;
+                padding: 3rem 1rem;
+            }
+
+            .contenedor {
+                max-width: 900px;
+                margin: 3rem auto;
+                padding: 0 1.5rem;
+            }
+
+            .lista-talleres {
+                display: grid !important;
+                /* Fuerza exactamente 2 columnas iguales */
+                grid-template-columns: 1fr 1fr !important;
+                gap: 2rem !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+        </style>
     </head>
     <body>
         <header class="encabezado-pagina">
@@ -53,12 +87,12 @@ const todosLosTalleres: Taller[] = [
         <main class="contenedor">
             <ul class="lista-talleres">
                 {
-                    todosLosTalleres.map((taller: Taller) => (
+                    todosLosTalleres.map((taller) => (
                         <TarjetaTalleres
                             nombre={taller.nombre}
                             descripcion={taller.descripcion}
                             imagen={taller.imagen}
-                            enlace="/talleres"
+                            mostrarBoton={false}
                         />
                     ))
                 }

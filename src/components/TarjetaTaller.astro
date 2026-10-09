@@ -4,9 +4,16 @@ interface Props {
     descripcion: string;
     imagen: string;
     enlace?: string;
+    mostrarBoton?: boolean; // Prop opcional para controlar la visibilidad del botón
 }
 
-const { nombre, descripcion, imagen, enlace = "/talleres" } = Astro.props;
+const {
+    nombre,
+    descripcion,
+    imagen,
+    enlace = "/talleres",
+    mostrarBoton = false, // Por defecto es false
+} = Astro.props;
 ---
 
 <li class="tarjeta-taller">
@@ -17,7 +24,15 @@ const { nombre, descripcion, imagen, enlace = "/talleres" } = Astro.props;
         <div class="contenido">
             <h3>{nombre}</h3>
             <p>{descripcion}</p>
-            <a href={enlace} class="btn-enlace">Ver taller en detalle</a>
+
+            {/* Se renderiza el botón ÚNICAMENTE si mostrarBoton es true */}
+            {
+                mostrarBoton && (
+                    <a href={enlace} class="btn-enlace">
+                        Ver más información
+                    </a>
+                )
+            }
         </div>
     </article>
 </li>
@@ -86,7 +101,7 @@ const { nombre, descripcion, imagen, enlace = "/talleres" } = Astro.props;
     }
 
     p {
-        margin: 0 0 1.5rem 0;
+        margin: 0;
         color: #475569;
         font-size: 0.95rem;
         line-height: 1.6;
@@ -98,6 +113,7 @@ const { nombre, descripcion, imagen, enlace = "/talleres" } = Astro.props;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
+        margin-top: 1.5rem;
         padding: 0.75rem 1.25rem;
         background-color: #2563eb;
         color: #ffffff;
@@ -113,7 +129,7 @@ const { nombre, descripcion, imagen, enlace = "/talleres" } = Astro.props;
 
     .btn-enlace:hover {
         background-color: #1d4ed8;
-    }   
+    }
 
     .btn-enlace:active {
         transform: scale(0.98);
